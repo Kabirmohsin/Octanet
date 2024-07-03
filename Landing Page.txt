@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabbu's Cafe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .header {
+            background-color: #6f4e37;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        .header p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .main {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #6f4e37;
+        }
+        .cta {
+            background-color: #6f4e37;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kabbu's Cafe</h1>
+        <p>Your Perfect Coffee Destination</p>
+    </div>
+    <div class="main">
+        <div class="section">
+            <h2>About Us</h2>
+            <p>Welcome to Kabbu's Cafe, the ultimate coffee experience. Whether you're looking for a place to relax, meet friends, or get some work done, we have the perfect cup of coffee for you.</p>
+        </div>
+        <div class="section">
+            <h2>Our Coffee</h2>
+            <p>At Kabbu's Cafe, we source our coffee beans from the finest regions around the world. Each cup is brewed to perfection, ensuring you get the best taste every time.</p>
+        </div>
+        <div class="section">
+            <h2>Visit Us</h2>
+            <p>Come visit us at our cozy location in Rajendra Nagar. We can't wait to serve you your favorite brew!</p>
+            <a href="#" class="cta">Get Directions</a>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Kabbu's Cafe. All rights reserved.</p>
+    </div>
+</body>
+</html>
