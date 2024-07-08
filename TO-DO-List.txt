@@ -114,7 +114,74 @@ li.completed {
         </div>
         <ul id="task-list"></ul>
     </div>
-    <script src="script.js"></script>
+
+    <script src="script.js">
+                          document.addEventListener('DOMContentLoaded', () => {
+    const taskInput = document.getElementById('new-task-input');
+    const addTaskButton = document.getElementById('add-task-button');
+    const taskList = document.getElementById('task-list');
+
+    addTaskButton.addEventListener('click', () => {
+        const taskText = taskInput.value.trim();
+        if (taskText) {
+            addTask(taskText);
+            taskInput.value = '';
+        }
+    });
+
+    taskInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                addTask(taskText);
+                taskInput.value = '';
+            }
+        }
+    });
+
+    function addTask(taskText) {
+        const li = document.createElement('li');
+
+        const taskSpan = document.createElement('span');
+        taskSpan.textContent = taskText;
+        li.appendChild(taskSpan);
+
+        const actionsDiv = document.createElement('div');
+        actionsDiv.className = 'task-actions';
+
+        const completeButton = document.createElement('button');
+        completeButton.className = 'complete';
+        completeButton.textContent = 'Complete';
+        completeButton.addEventListener('click', () => {
+            li.classList.toggle('completed');
+        });
+
+        const editButton = document.createElement('button');
+        editButton.className = 'edit';
+        editButton.textContent = 'Edit';
+        editButton.addEventListener('click', () => {
+            const newTaskText = prompt('Edit Task:', taskSpan.textContent);
+            if (newTaskText !== null && newTaskText.trim() !== '') {
+                taskSpan.textContent = newTaskText.trim();
+            }
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.className = 'delete';
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => {
+            taskList.removeChild(li);
+        });
+
+        actionsDiv.appendChild(completeButton);
+        actionsDiv.appendChild(editButton);
+        actionsDiv.appendChild(deleteButton);
+        li.appendChild(actionsDiv);
+
+        taskList.appendChild(li);
+    }
+});
+    </script>
 </body>
 </html>
 
